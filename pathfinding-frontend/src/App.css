@@ -1,0 +1,203 @@
+body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #0b0c10;
+    color: #c5c6c7;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden; /* Prevents unwanted horizontal swiping */
+}
+
+.app-container {
+    text-align: center;
+    padding: 20px 10px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.5px;
+    margin-bottom: 5px;
+}
+
+.badge {
+    font-size: 0.85rem;
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    color: #000;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* FLEX CONTROLS WRAPPER */
+.controls {
+    margin: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.btn-run {
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    color: #000;
+}
+
+.btn-clear {
+    background-color: #1f2833;
+    color: #66fcf1;
+    border: 1px solid rgba(102, 252, 241, 0.2);
+}
+
+/* RESPONSIVE METRICS DASHBOARD */
+.metrics-container {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.metric-box {
+    background: #1f2833;
+    border: 1px solid rgba(102, 252, 241, 0.1);
+    padding: 8px 14px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column; /* Stacked text layout for compact feel */
+    align-items: center;
+    min-width: 70px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.metric-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #c5c6c7;
+}
+
+.metric-value {
+    font-size: 15px;
+    font-weight: 800;
+    color: #66fcf1;
+}
+
+/* SCALABLE MODERN GRID CONTAINER */
+.grid-container {
+    border: 2px solid #1f2833;
+    border-radius: 10px;
+    display: inline-block;
+    background-color: #0b0c10;
+    padding: 4px;
+    max-width: 100%;
+    overflow-x: auto; /* Adds fallback scrolling just in case */
+}
+
+.grid-row {
+    display: flex;
+}
+
+/* SCALABLE FLUID CELLS */
+.cell {
+    width: 26px;  /* Laptop standard width */
+    height: 26px; /* Laptop standard height */
+    border: 1px solid #1f2833;
+    background-color: #151a22;
+    margin: 1px;
+    border-radius: 3px;
+    touch-action: none; /* Prevents mobile scrolling while drawing walls */
+}
+
+.cell-start {
+    background-color: #66fcf1 !important;
+    box-shadow: 0 0 10px #66fcf1;
+    border-radius: 50%;
+}
+
+.cell-end {
+    background-color: #ff4757 !important;
+    box-shadow: 0 0 10px #ff4757;
+    border-radius: 50%;
+}
+
+.cell-wall {
+    background-color: #455a64;
+    animation: wallAnim 0.2s ease-out forwards;
+}
+
+.cell-visited { animation: visitedAnim 0.35s ease-out forwards; }
+.cell-path { animation: pathAnim 0.3s ease-out forwards; }
+
+/* MEDIA QUERY BREAKPOINT FOR SMARTPHONES */
+@media (max-width: 768px) {
+    .title { font-size: 1.8rem; }
+
+    /* Make boxes slightly larger on phones so they are tap-friendly */
+    .cell {
+        width: 18px;
+        height: 18px;
+        margin: 0.5px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+
+/* TOGGLE SLIDER BUTTON */
+.toggle-container {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+.toggle-container input { display: none; }
+.toggle-slider {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    background-color: #1f2833;
+    border-radius: 34px;
+    transition: .3s;
+    margin-right: 6px;
+}
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #c5c6c7;
+    border-radius: 50%;
+    transition: .3s;
+}
+input:checked + .toggle-slider { background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); }
+input:checked + .toggle-slider:before { transform: translateX(20px); background-color: #0b0c10; }
+.toggle-label { font-size: 13px; font-weight: 600; color: #c5c6c7; }
+
+@keyframes wallAnim { 0% { transform: scale(0.5); } 100% { transform: scale(1); } }
+@keyframes visitedAnim {
+    0% { transform: scale(0.3); background-color: rgba(112, 0, 255, 0.8); }
+    100% { transform: scale(1); background-color: rgba(0, 184, 148, 0.2); border: 1px solid rgba(0, 242, 254, 0.15); }
+}
+@keyframes pathAnim {
+    0% { transform: scale(0.5); background-color: #ffeb3b; }
+    100% { transform: scale(1); background-color: #f5cd79; box-shadow: 0 0 5px #f5cd79; }
+}
