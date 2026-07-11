@@ -1,16 +1,78 @@
-# React + Vite
+# Pathfinding Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React + Vite application for visualizing heuristic pathfinding algorithms.
 
-Currently, two official plugins are available:
+## 🚀 Quick Start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project uses React with Vite for fast development and optimized builds, configured with HMR (Hot Module Replacement) and ESLint rules.
 
-## React Compiler
+### Prerequisites
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Node.js (v14 or higher)
+- npm or yarn
 
-## Expanding the ESLint configuration
+### Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+```
+
+### Development
+
+```bash
+npm run dev
+```
+
+### Build
+
+```bash
+npm run build
+```
+
+## 📦 Official Plugins
+
+Two official Vite React plugins are available:
+
+- **[@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react)** — Uses [Oxc](https://oxc.rs) for faster performance
+- **[@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc)** — Uses [SWC](https://swc.rs/) for optimized compilation
+
+## ⚙️ Configuration
+
+### React Compiler
+
+The React Compiler is currently disabled due to its impact on development and build performance. To enable it, refer to the [React Compiler documentation](https://react.dev/learn/react-compiler/installation).
+
+### ESLint Configuration
+
+For production applications, we recommend enabling TypeScript with type-aware lint rules. See the [Vite TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for guidance.
+
+## 📁 Project Structure
+
+```
+pathfinding-frontend/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── App.jsx
+│   └── main.jsx
+├── public/
+├── vite.config.js
+└── package.json
+```
+
+## 🛠️ Available Scripts
+
+- `npm run dev` — Start development server with HMR
+- `npm run build` — Create optimized production build
+- `npm run lint` — Run ESLint checks
+- `npm run preview` — Preview production build locally
+
+## 📚 Learn More
+
+- [Vite Documentation](https://vitejs.dev)
+- [React Documentation](https://react.dev)
+- [Heuristic Pathfinding Algorithms](https://en.wikipedia.org/wiki/Heuristic_search)
+
+## 📝 License
+
+See the root repository for license details.
