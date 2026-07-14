@@ -1,3 +1,7 @@
 fastapi
 uvicorn
+<<<<<<< HEAD
 pydantic
+=======
+pydantic
+>>>>>>> c23bacdda1694c1f3f68b346e0a6c062a28b500c

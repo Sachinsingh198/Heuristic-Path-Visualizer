@@ -2,7 +2,13 @@
 
 An interactive, high-performance full-stack web application designed to visualize the **A* Pathfinding Algorithm** in real-time. Built with a sleek cyber-dark user interface, it bridges a responsive React client with a fast FastAPI backend solver to demonstrate graph search optimization, heuristic calculations, and interactive wall-painting.
 
+<<<<<<< HEAD
 🌐 **Live Demo:** [heuristic-path-visualizer.vercel.app](https://heuristic-path-visualizer.vercel.app/)
+=======
+An interactive, high-performance full-stack web application designed to visualize classic Artificial Intelligence graph search and state-space optimization algorithms in real-time. This project demonstrates the A* pathfinding algorithm with a sleek, responsive UI and real-time performance analytics.
+
+🔗 **[Live Demo](https://heuristic-path-visualizer.vercel.app/)** | 📖 **[Documentation](#)** | 🐛 **[Report Issues](https://github.com/Sachinsingh198/Heuristic-Path-Visualizer/issues)**
+>>>>>>> c23bacdda1694c1f3f68b346e0a6c062a28b500c
 
 ---
 
